@@ -1,16 +1,15 @@
-Remote WiFi Terminal for Arduino
-================================
+Remote WiFi Terminal for Z80-MBC2
+=================================
 
-As easy to use as the Serial terminal provided with Arduino IDE
+A mashup of WifiTerm for Arduino ESP 8266
+and xterm.js for a wifi addon to the Z80-MBC2 
+released under MIT
 
-##### Supported Hardware #####
- - ESP8266 [Arduino for ESP8266](https://github.com/esp8266/Arduino/)
- - ESP32 [Arduino for ESP32](https://github.com/espressif/arduino-esp32)
+please see the license
 
-##### Required Libraries #####
- - [Arduino Websockets](https://github.com/Links2004/arduinoWebSockets)
- 
-##### First Steps #####
-
- - run example Full_Demo.ino
-
+ (C) Danny Arnold 2020
+ Portions of this code are 
+ Copyright (c) 2020 bricoleau
+ Copyright (c) 2017-2019, The xterm.js authors (MIT License)
+ Copyright (c) 2014-2017, SourceLair, Private Company (www.sourcelair.com) (MIT License)
+ Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
