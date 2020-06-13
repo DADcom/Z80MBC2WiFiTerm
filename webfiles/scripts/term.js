@@ -74,7 +74,7 @@ let isOnline = false;
 function toggleImmediate(){
     if (document.fullscreenElement) { 
         document.exitFullscreen();
-        //document.getElementById("header").style.display= "block";
+        document.getElementById("header").style.display= "block";
         document.getElementById("status").innerHTML="Immediate Mode"; 
         document.querySelectorAll(".line-buttons").forEach(a=>a.style.display = "none");
         resize();
@@ -82,7 +82,7 @@ function toggleImmediate(){
         fscreen = false; 
       } else { 
         document.documentElement.requestFullscreen();
-        //document.getElementById("header").style.display= "none";
+        document.getElementById("header").style.display= "none";
         document.getElementById("terminal").style.display= "block";
         document.getElementById("status").innerHTML="Line Mode";
         document.querySelectorAll(".line-buttons").forEach(a=>a.style.display = "block");
