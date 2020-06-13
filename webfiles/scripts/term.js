@@ -150,7 +150,7 @@ function inputButtonSetup() {
      });
      document.getElementById("about").addEventListener("click", function(event) {
         event.preventDefault();
-        alert("Z80-MBC Web Terminal V1.0 \nhttps://github/pinnet/z80WebTerm \n(C) Danny Arnold 2020 \nabout.me/dannyarnoldcom \nmashup of xterm.js and WifiTerm \nhttps://github.com/xtermjs/xterm.js \nhttps://github.com/bricoleau/WiFiTerm under MIT licence")
+        alert("Z80-MBC Web Terminal V1.0 \nhttps://github/DADcom/Z80MBC2WifiTerm \n(C) Danny Arnold 2020 \nabout.me/dannyarnoldcom \nmashup of xterm.js and WifiTerm \nhttps://github.com/xtermjs/xterm.js \nhttps://github.com/bricoleau/WiFiTerm under MIT licence")
         focusInput();
      });
      document.getElementById("terminal").addEventListener("click", function(event) {
