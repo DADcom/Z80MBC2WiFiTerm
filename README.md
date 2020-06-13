@@ -16,3 +16,9 @@ please see the license
 
 Please see Releases for current release
 https://github.com/DADcom/Z80MBC2WiFiTerm/releases
+
+
+Todo 
+    Impement 'user' key support - requires updating Z80-MBC2 firmware for support
+    Documentation finish documentation wiki
+    Keycad schematics of ESP8266 implementation
