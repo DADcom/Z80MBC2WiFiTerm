@@ -22,4 +22,4 @@ To-do
 
 - Implement 'user' key support - requires updating Z80-MBC2 firmware for support
 - Documentation finish documentation wiki
-- Key cad schematics of ESP8266 implementation
+- Kicad schematics of ESP8266 implementation
