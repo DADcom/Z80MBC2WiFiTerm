@@ -1,0 +1,24 @@
+ case "^a" :
+                ws.send("\x01");
+                break;
+            case "^g" :
+                ws.send("\x07");
+                break;
+            case "^i" :
+                ws.send("\x08");
+                break;
+            case "^o" :
+                ws.send("\x15");
+                break;    
+            case "^c" :
+                ws.send("\x03");
+                break;
+            case "^d" :
+                ws.send("\x04");
+                break;
+            case "^z" :
+                ws.send("\x1D");
+                break;
+            case "^x" :
+                 ws.send("\x1C");
+                 break;

@@ -109,6 +109,11 @@ function offline() {
 function focusInput(){
     document.getElementById("terminal").focus();
 }
+function ctrlkey(key){
+        if (key.length > 1) return null;
+        eval("esc = \"\\x" + (key.toUpperCase().charCodeAt(0) -64).toString(16).padStart(2, '0')+"\"");
+        return esc;
+} 
 function inputButtonSetup() {
     document.getElementById("terminal").addEventListener("focusout", function(event) {
         if (!fscreen){
@@ -117,8 +122,14 @@ function inputButtonSetup() {
         }   
      });
     document.getElementById("termbody").addEventListener("keydown", function(event) {
+        
         if(event.ctrlKey){ 
-            if(event.key !="Control")sendKey("^"+event.key);
+            event.preventDefault(); 
+            event.stopPropagation();
+            if(event.key !="Control"){ 
+                
+                ws.send(ctrlkey(event.key));
+            }
         }
         else {
                 if(fscreen){
@@ -128,7 +139,7 @@ function inputButtonSetup() {
                     }
                 }
                 else{
-                    event.preventDefault();   
+                      
                     sendKey(event.key);                   
                 }
         }
@@ -143,9 +154,10 @@ function inputButtonSetup() {
         sendKey("Tab");
         focusInput();
      }); 
-     document.getElementById("ctrlc").addEventListener("click", function(event) {
+     document.getElementById("ctrl").addEventListener("click", function(event) {
         event.preventDefault();
-        sendKey("^c");
+        ws.send(ctrlkey(document.getElementById("txtIn").value[0]));
+        document.getElementById("txtIn").value="";
         focusInput();
      });
      document.getElementById("about").addEventListener("click", function(event) {
@@ -231,18 +243,6 @@ function sendKey(key) {
             case "Enter" :
                 ws.send("\r");
                 break;
-            case "^c" :
-                ws.send("\x03");
-                break;
-            case "^d" :
-                ws.send("\x04");
-                break;
-            case "^z" :
-                ws.send("\x1D");
-                break;
-            case "^x" :
-                 ws.send("\x1C");
-                 break;
             default :
                 if (key.length > 1) break;
                 ws.send(key);
