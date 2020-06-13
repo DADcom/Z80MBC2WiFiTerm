@@ -2,7 +2,7 @@ Remote WiFi Terminal for Z80-MBC2
 =================================
 
 A mashup of WifiTerm for Arduino ESP 8266
-and xterm.js for a wifi addon to the Z80-MBC2 
+and xterm.js for a Wi-Fi addon to the Z80-MBC2 
 released under MIT
 
 please see the license
@@ -18,7 +18,8 @@ Please see Releases for current release
 https://github.com/DADcom/Z80MBC2WiFiTerm/releases
 
 
-Todo 
-    Impement 'user' key support - requires updating Z80-MBC2 firmware for support
-    Documentation finish documentation wiki
-    Keycad schematics of ESP8266 implementation
+To-do
+
+- Implement 'user' key support - requires updating Z80-MBC2 firmware for support
+- Documentation finish documentation wiki
+- Key cad schematics of ESP8266 implementation
