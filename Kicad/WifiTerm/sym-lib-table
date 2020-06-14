@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name ESP8266)(type Legacy)(uri D:/dev/Z80MBC2WiFiTerm/Kicad/ESP8266.lib)(options "")(descr ""))
+  (lib (name Wifiterm)(type Legacy)(uri ${KIPRJMOD}/Wifiterm.lib)(options "")(descr ""))
+)
