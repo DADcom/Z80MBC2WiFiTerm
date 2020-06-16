@@ -35,6 +35,7 @@ let fscreen = false;
 let connected = false;
 let isCtl = false;
 let currow = 0;
+let userLED = false;
 function wsInit() {
 
     ws = new WebSocket("ws://" + ESP_ip + ":81");
@@ -174,12 +175,21 @@ function inputButtonSetup() {
      });
      document.getElementById("reset").addEventListener("click", function(event) {
         event.preventDefault();
+        
         ws.send("+++ATH0");
+
+        if (userLED)  setTimeout(() => {   ws.send("+++ATH1"); userLED = false; showUserLED(); }, 600);
+       
+       
+        
         focusInput();
      });
      document.getElementById("user").addEventListener("click", function(event) {
         event.preventDefault();
-        alert("TBA User");
+        if (userLED) ws.send("+++ATH1");
+        else  ws.send("+++ATH2");
+        userLED = !userLED;
+        showUserLED();        
         focusInput();
      });
      document.getElementById("input").addEventListener("click", function(event) {
@@ -195,6 +205,11 @@ function getESPlocation() {
     var loc = location.host;
     if (loc == "") loc = prompt("Enter ESP ip address","192.168.1.80");
     return loc;
+}
+function showUserLED(){
+    if(userLED) document.getElementById("user").style.background='#0000FF';
+    else document.getElementById("user").style.background='#FFFFFF';
+
 }
 function resetOutput() {
    term.clear();
